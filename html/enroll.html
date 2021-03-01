@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/enroll.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="wrap">
+            <div class="layout">
+                <div class="n-frame">
+                    <div class="logo">
+                        <a href="#" class="milogo"></a>
+                    </div>
+                    <h4 class="title_big30" code="1">注册flyme账号</h4>
+                    <div>
+                        <div class="regbox">
+                            <h4>手机号码</h4>
+                            <input type="text" placeholder="请输入您的手机号码" id="un" required="required">
+                            <h4>密码</h4>
+                            <input type="password" placeholder="请输入您的密码" id="pw" required="required">
+                            <input type="button" value="立即注册" id="btn">
+                        </div>
+                        <div class="privacy_box">
+                            <div class="msg">
+                                <label class="n_checked">
+                                    已阅读并同意：魅族
+                                    <a href="#">用户协议</a>
+                                    和
+                                    <a href="#">隐私政策</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer clearfix">
+            <div class="footer-top">
+                <ul>
+                    <li><a href="#">简体</a><span>|</span></li>
+                    <li><a href="#">繁体</a><span>|</span></li>
+                    <li><a href="#">English</a><span>|</span></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </div>
+            <p class="footer-p">
+                <span>魅族公司版权所有-京ICP备10046444-</span>
+                <a href="#">
+                    <span>
+                        <img
+                            src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png"
+                            alt="">
+                    </span> 京公网安备11010802020134号
+                </a>
+                -京ICP证110507号
+            </p>
+        </div>
+    </div>
+    <script src="../js/jquery1.12.4.min.js"></script>
+    <script>
+        //注册
+        $('#btn').click(function() {
+            var ipone = $('#un').val();
+            var poss = $('#pw').val();
+            //数据存储
+            var enroll = {
+                ipone: ipone,
+                poss: poss,
+            };
+            var xing = [];
+            xing.push(enroll);
+            xing = JSON.stringify(xing);
+            localStorage.setItem('xing', xing);
+            alert('注册成功'); 
+            location.href  =  "./Login.html";
+        })
+    </script>
+</body>
+
+</html>

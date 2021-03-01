@@ -1,0 +1,72 @@
+{
+  "id": "2352682",
+  "name": "魅族商城",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "287164",
+      "name": "注册登录-用户名",
+      "font_class": "zhucedengluyonghuming",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "584245",
+      "name": "搜索",
+      "font_class": "iconfonticonfontsousuo1",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "802969",
+      "name": "楼房",
+      "font_class": "loufang",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "904731",
+      "name": "保障",
+      "font_class": "baozhang",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "998483",
+      "name": "购物车",
+      "font_class": "ai66",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "1313492",
+      "name": "BBD盒子",
+      "font_class": "BBDhezi",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "4298024",
+      "name": "维修on",
+      "font_class": "weixiuon",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "9412343",
+      "name": "sf-logo",
+      "font_class": "sf-logo",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "18170247",
+      "name": "电,闪电,电力,电量",
+      "font_class": "lightning-full",
+      "unicode": "e995",
+      "unicode_decimal": 59797
+    }
+  ]
+}

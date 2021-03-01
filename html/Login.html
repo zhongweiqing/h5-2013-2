@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div id="header">
+        <div class="header-inner">
+            <div class="login">
+                <a href="#">
+                    <h1></h1>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 中间 -->
+    <div id="mian">
+        <div class="mian-inner">
+            <a href="#"></a>
+        </div>
+        <div class="login-register">
+            <div class="login-page">
+                <div class="login-page-top">
+                    <a href="#" id="Account-code">帐号登录</a>
+                    <span class="link"></span>
+                    <a href="#" id="scan-code">扫码登录</a>
+                </div>
+
+                <!-- 账户login-bottom -->
+                <div class="login-page-bottom">
+                    <!-- 用户名登录注册 -->
+                    <form action="#" id="login-page-phone">
+                        <input type="text" placeholder="邮箱/手机号码/flyme" id="un">
+                        <input type="password" placeholder="密码" id="pw">
+                        <input type="text" class="yzm-title">
+                        <span class="yzm"></span>
+                    </form>
+                    <!-- 手机短信登录注册 -->
+                    <form action="#" id="login-page-user">
+                        <div class="digit">+86</div>
+                        <input type="text" placeholder="手机号码">
+                        <input type="text" placeholder="短信验证码">
+                        <div class="Captcha"><a href="#">获取验证码</a></div>
+                    </form>
+                    <div>
+                        <input type="button" value="登录" class="button-btn">
+                    </div>
+
+                    <!-- login-bottom-bm -->
+                    <div class="login-page-bottom-bm">
+                        <span><a href="#" id="login-page-one-btn">手机短信登录/注册</a></span>
+                        <span><a href="#" id="login-page-two-btn">用户名密码登录</a></span>
+                    </div>
+                    <!-- registered(注册) -->
+                    <div class="registered">
+                        <span>
+                        <a href="./enroll.html">立即注册</a>
+                        <span>|</span>
+                        <a href="#">忘记密码？</a>
+                        </span>
+                        <a href="#" class="registered-code">收不到验证码?</a>
+                    </div>
+                    <!-- 其他登录方式 -->
+                    <div class="Other-login-methods">
+                        <a class="icon-type  icontype-qq " href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&client_id=100284651&redirect_uri=https://account.xiaomi.com/pass/sns/login/load&state=STATE_582218" title="QQ登录">
+                            <i class="btn-icontype btn-qq"></i>
+                        </a>
+                        <a class="icon-type icontype-weibo" href="https://api.weibo.com/oauth2/authorize?response_type=code&client_id=2996826273&redirect_uri=https://sns.account.xiaomi.com/pass/sns/login/load&state=STATE_227792###" title="微博">
+                            <i class="btn-icontype btn-weibo"></i>
+                        </a>
+                        <a class="icon-type icontype-zhifubao" href="https://auth.alipay.com/login/express.htm?goto=https%3A%2F%2Fmemberexprod.alipay.com%3A443%2Fauthorize%2FuserAuthQuickLoginAction.htm%3Fe_i_i_d%3Df5e8855487495ef72fb5d289478cc1b8" title="支付宝">
+                            <i class="btn-icontype btn-zhifubao"></i>
+                        </a>
+                        <a class="icon-type icontype-weixin" href="https://open.weixin.qq.com/connect/qrconnect?appid=wxa21de3acc0d5e79b&redirect_uri=https%3A%2F%2Fsns.account.xiaomi.com%2Fpass%2Fsns%2Flogin%2Fload&response_type=code&scope=snsapi_login&state=STATE_327685#wechat_redirect"
+                            title="微信">
+                            <i class="btn-icontype btn-weixin"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 扫码登录 -->
+                <div class="Sweep-page-bottom">
+                    <div class="sweep-text">
+                        <p>请使用魅族手机/魅族旗下APP扫码登录</p>
+                    </div>
+                    <div class="swepp-img">
+                        <img src="../images/xiaomi.png" alt="">
+                    </div>
+                    <div class="sweep-sub-txt">
+                        <p>使用<span>魅族商城APP</span>扫一扫</p>
+                        <p>魅族手机可打开「设置」>「flyme帐号」扫码登录</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div id="footer">
+        <div class="footer-inner">
+            <ul class="footer-inner-u">
+                <li>
+                    <a href="#">简体</a>|
+                </li>
+                <li>
+                    <a href="#">繁体</a>|
+                </li>
+                <li>
+                    <a href="#">English</a>|
+                </li>
+                <li>
+                    <a href="#">常见问题</a>|
+                </li>
+                <li>
+                    <a href="#">隐私政策</a>
+                </li>
+            </ul>
+        </div>
+        <p class="footer-inner-bm">魅族公司版权所有-京ICP备10046444-
+            <a href="#"><span>
+                <img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png" alt="">
+            </span>
+                京公网安备11010802020134号</a> -京ICP证110507号
+        </p>
+    </div>
+
+</body>
+
+</html>
+
+<script src="../js/jquery1.12.4.min.js"></script>
+<script>
+    //验证码
+    // 随机产生一个min到max之间的随机整数
+    function rand(min, max) {
+        return parseInt(Math.random() * (max - min + 1)) + min;
+    }
+
+    // 随机产生一个包含n个字母或数字的字符串
+    function randChar(n) {
+        var str = ""; //用来记录随机字符串集合
+        for (var i = 0; i < n; i++) {
+            // 所以先随机产生一个48-122之间的随机整数
+            var code = rand(48, 122)
+            if ((code > 57 && code < 65) || (code > 90 && code < 97)) {
+                // 如果产生的编码不是数字或字符，本次作废
+                i--;
+            } else {
+                // 如果产生的编码是数字或字符，可以
+                var char = String.fromCharCode(code);
+                str += char;
+            }
+        }
+        return str;
+    }
+    $('.yzm').html(randChar(6));
+    $('.yzm').on('click', function() {
+            $('.yzm').html(randChar(6));
+        })
+        //点击扫码登录 login-pape-bottom隐藏 Sweep-page-botto显示
+    $('#scan-code').click(function() {
+            $('.login-page-bottom').css({
+                'display': 'none'
+            });
+            $('.Sweep-page-bottom').css({
+                'display': 'block'
+            })
+        })
+        //点击账号登录 login-pape-bottom隐藏  Sweep-page-botto隐藏
+    $('#Account-code').click(function() {
+            $('.Sweep-page-bottom').css({
+                'display': 'none'
+            })
+            $('.login-page-bottom').css({
+                'display': 'block'
+            })
+
+        })
+        //点击login-page-bottom-btn  login-page-phone隐藏 login-page-user显示 registered 文字变成登录 login-page-bottom-btn 文字变成用户名密码 registered 文字变成 收不到验证码?
+    $('#login-page-one-btn').click(function() {
+            $('#login-page-phone').css({
+                'display': 'none'
+            })
+            $('#login-page-user').css({
+                'display': 'block'
+            })
+            $('.button-btn').val('立即登录/注册')
+            $('#login-page-two-btn').css({
+                'display': 'block'
+            })
+            $('#login-page-one-btn').css({
+                'display': 'none'
+            })
+            $('.registered>span').css({
+                'display': 'none'
+            })
+            $('.registered>.registered-code').css({
+                'display': 'block'
+            })
+        })
+        //点击login-page-bottom-btn  login-page-phone隐藏 login-page-user显示 registered 文字变成登录 login-page-bottom-btn 文字变成用户名密码 registered 文字变成 收不到验证码?
+    $('#login-page-two-btn').click(function() {
+        $('#login-page-phone').css({
+            'display': 'block'
+        })
+        $('#login-page-user').css({
+            'display': 'none'
+        })
+        $('#login-page-two-btn').css({
+            'display': 'none'
+        })
+        $('#login-page-one-btn').css({
+            'display': 'block'
+        })
+        $('.button-btn').val('登录')
+        $('.registered>span').css({
+            'display': 'block'
+        })
+        $('.registered>.registered-code').css({
+            'display': 'none'
+        })
+
+    })
+
+
+    //登录
+    $('.button-btn').click(function() {
+        var un = $('#un').val();
+        var pw = $('#pw').val();
+        var yzm = $('.yzm').html();
+        var yzmTitle = $('.yzm-title').val();
+        if (localStorage.getItem('xing')) {
+            var xing = JSON.parse(localStorage.getItem('xing'));
+            xing.forEach(item => {
+                console.log(item.ipone, item.poss)
+                if (un == item.ipone && pw == item.poss && yzm == yzmTitle) {
+
+                    alert('登录成功') ;
+                    location.href = "../index.html"
+                } else if (yzm != yzmTitle) {
+                    $('.yzm').html(randChar(6));
+                    alert('验证码错误')
+                    $('.yzm-title').val('')
+                } else {
+                    $('.yzm').html(randChar(6));
+                    alert('手机号码和密码错误')
+                    $('.yzm-title').val('')
+                }
+            });
+
+        } else {
+            alert('请注册账号')
+        }
+
+
+    })
+</script>

@@ -1,0 +1,773 @@
+/* 版心 */
+
+.common {
+    width: 1226px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container {
+    width: 1240px;
+    margin: 0 auto;
+    /* z-index: 111; */
+}
+
+.swiper-container {
+    width: 100%;
+    height: 680px;
+    position: relative;
+}
+
+#meizu_header {
+    height: 82px;
+    /* position: absolute; */
+    left: 65%;
+    /* margin-left: -900px; */
+    /* right: 660px; */
+    z-index: 111;
+}
+
+.meizu_header_logo {
+    /* line-height: 82px; */
+    width: 140px;
+    float: left;
+}
+
+.meizu_header_logo a img {
+    margin-top: 26px;
+}
+
+.meizu_header_ul {
+    float: left;
+    overflow: hidden;
+}
+
+.meizu_header_ul li {
+    float: left;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    line-height: 82px;
+}
+
+.meizu_header_ul li a {
+    font-size: 14px;
+    color: #000;
+    padding: 31px 20px 30px;
+    text-decoration: none;
+}
+
+.meizu_header_ul li a:hover {
+    color: aqua;
+}
+
+.header_search {
+    position: relative;
+    width: 170px;
+    height: 30px;
+    margin: 26px 5px 0 10px;
+    float: left;
+    border-radius: 20px;
+    border: 1px solid #999;
+    line-height: 29px;
+    background: #fff;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.inp {
+    display: block;
+    border: none;
+    padding: 0;
+    outline: 0;
+    width: 127px;
+    height: 20px;
+    margin-left: 15px;
+    margin-top: 5px;
+    transition: width .5s;
+    font-size: 12px;
+    line-height: 20px;
+    color: #333;
+    background: transparent;
+    box-sizing: content-box;
+    outline-offset: 0;
+}
+
+.header_search a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 36px;
+    height: 32px;
+    background-position: 50%;
+    cursor: pointer;
+}
+
+.header_search a svg {
+    display: block;
+    margin: 7px 5px 0 auto;
+}
+
+.font1 {
+    position: absolute;
+    top: 23px;
+}
+
+.font2 {
+    position: absolute;
+    top: 26px;
+    right: 356px;
+}
+
+
+/* 头 */
+
+#header {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .07);
+}
+
+
+/* 导航 */
+
+#nav {
+    height: 40px;
+    background-color: #333;
+}
+
+.nav-inner {
+    height: 40px;
+}
+
+.nav-inner a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.left-nav {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+}
+
+.left-nav a {
+    display: inline-block;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+.left-nav span {
+    margin: .3em;
+    color: #424242;
+}
+
+.left-nav .download {
+    position: relative;
+}
+
+.left-nav .download .before {
+    position: absolute;
+    top: 24px;
+    left: 15px;
+    width: 0;
+    height: 0;
+    border: 8px solid;
+    border-color: transparent transparent #fff;
+    display: none;
+}
+
+.left-nav .download:hover .before {
+    display: block;
+}
+
+.left-nav .download .download-img {
+    position: absolute;
+    top: 36px;
+    left: 50%;
+    width: 124px;
+    height: 0;
+    background: #fff;
+    margin-left: -55px;
+    -webkit-box-shadow: #aaa 0 1px 5px;
+    box-shadow: 0 1px 5px #aaa;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    -webkit-transition: height .3s;
+    transition: height .3s;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.left-nav .download:hover .download-img {
+    height: 148px;
+}
+
+.left-nav .download .download-img img {
+    display: block;
+    margin: 18px auto 12px
+}
+
+.right-nav {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    float: right;
+    margin-left: 15px;
+    background-color: #424242;
+}
+
+.right-nav a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #b0b0b0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.right-nav .shopp-inner {
+    position: absolute;
+    top: 40px;
+    left: -196px;
+    width: 316px;
+    height: 0px;
+    background-color: #fff;
+    text-align: center;
+    -webkit-transition: height .3s;
+    transition: height .3s;
+    z-index: 40;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+}
+
+
+/* lading */
+
+.loading {
+    position: absolute;
+    top: -60px;
+    left: -196px;
+    width: 316px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #fff;
+    display: none;
+    z-index: 45;
+}
+
+.loading-inner {
+    width: 24px;
+    height: 30px;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+}
+
+.loading span {
+    display: inline-block;
+    width: 5px;
+    height: 20px;
+    border-radius: 4px;
+    background: skyblue;
+    animation: load 1s ease infinite;
+}
+
+@keyframes load {
+    0%,
+    100% {
+        height: 5px;
+        background: skyblue;
+    }
+    50% {
+        height: 30px;
+        margin: -15px 0;
+        background: skyblue;
+    }
+}
+
+.loading span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.loading span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.loading span:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.right-nav:hover .shopp-inner {
+    height: 100px;
+}
+
+.right-nav .shopp-inner span {
+    padding-top: 50px;
+    display: none;
+}
+
+.right-nav:hover .shopp-inner span {
+    display: inline-block;
+}
+
+.right-nav a:hover {
+    color: skyblue;
+    background-color: #fff;
+}
+
+.right-nav a em {
+    margin-right: 4px;
+    font-size: 18px;
+    line-height: 20px;
+    vertical-align: -2px;
+}
+
+.cneter-nav {
+    position: relative;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+
+.cneter-nav .user {
+    position: relative;
+    float: left;
+    width: 90px;
+    white-space: nowrap;
+}
+
+.cneter-nav a {
+    color: #b0b0b0;
+    line-height: 40px;
+    font-size: 12px;
+}
+
+.cneter-nav .user-name {
+    position: relative;
+    z-index: 5;
+    display: block;
+    width: 110px;
+    height: 40px;
+    text-align: center;
+}
+
+.cneter-nav .user-name .name {
+    display: inline-block;
+    width: auto;
+    max-width: 75px;
+    text-overflow: ellipsis;
+    vertical-align: text-bottom;
+    overflow: hidden;
+}
+
+.cneter-nav .user-name i {
+    font-size: 14px;
+    line-height: 24px;
+    vertical-align: 10px;
+}
+
+.cneter-nav .sep {
+    color: #424242;
+}
+
+.cneter-nav .message {
+    padding: 0 10px;
+}
+
+.cneter-nav .link-order {
+    width: 70px;
+    padding: 0 5px;
+    text-align: center;
+}
+
+
+/* 底部导航 */
+
+#header-bottom {
+    height: 100px;
+}
+
+.header-bottom-inner {
+    height: 100px;
+}
+
+.header-log {
+    float: left;
+    width: 62px;
+    margin-top: 22px;
+}
+
+.header-log a {
+    position: relative;
+    display: block;
+    width: 55px;
+    height: 55px;
+    text-indent: -9999em;
+    background-color: #ff6700;
+    overflow: hidden;
+}
+
+.header-log a::before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    content: "";
+    width: 55px;
+    height: 55px;
+    transition: all .2s;
+    background: url(https://s02.mifile.cn/assets/static/image/mi-logo.png) no-repeat 50% 50%;
+}
+
+.header-log a::after {
+    position: absolute;
+    top: 0px;
+    left: -55px;
+    content: "";
+    width: 55px;
+    height: 55px;
+    transition: all .2s;
+    background: url(https://s02.mifile.cn/assets/static/image/mi-home.png) no-repeat 50% 50%;
+}
+
+.header-log a:hover:after,
+.header-log a:hover:before {
+    transform: translate3d(55px, 0, 0);
+}
+
+.header-nav {
+    float: left;
+    width: 850px;
+    height: 100px;
+}
+
+.header-nav>ul {
+    position: relative;
+    width: 1100px;
+    height: 88px;
+    float: left;
+    padding: 12px 0 0 30px;
+}
+
+.header-nav>.header-nav-u .nav-item {
+    float: left;
+}
+
+.header-nav>.header-nav-u .nav-item>a {
+    display: block;
+    margin: 26px 10px 38px;
+    color: #333;
+    font-size: 16px;
+}
+
+.header-nav>.header-nav-u .nav-item>a:hover {
+    color: #ff6700;
+}
+
+.nav-commodity {
+    position: relative;
+    width: 127px;
+    padding-right: 15px;
+}
+
+
+/* 商品分类 */
+
+.commodity {
+    position: absolute;
+    top: 88px;
+    left: -92px;
+    width: 234px;
+    height: 460px;
+    z-index: 21;
+    font-size: 14px;
+}
+
+.header-Search {
+    float: right;
+    width: 296px;
+    margin-top: 25px;
+}
+
+.header-Search>form {
+    position: relative;
+    width: 296px;
+    height: 50px;
+    z-index: 20;
+}
+
+.header-Search>form .search-sub,
+.header-Search>form .search-text {
+    position: absolute;
+    top: 0;
+    border: 1px solid #e0e0ee
+}
+
+.header-Search>form .search-text {
+    width: 223px;
+    height: 48px;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 48px;
+}
+
+.header-Search>form .search-sub {
+    right: 0;
+    width: 50px;
+    height: 48px;
+    color: #333;
+    background-color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 48px;
+}
+
+.header-Search>form .search-sub:hover {
+    background-color: #ff6700;
+    color: #fff;
+}
+
+
+/* 中间详情 */
+
+.mian {
+    background-color: #fff;
+}
+
+.mian-inner {
+    margin-top: 10px;
+}
+
+#img-left {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    float: left;
+}
+
+#img-left #small {
+    position: relative;
+}
+
+#img-left #small #mask {
+    width: 175px;
+    height: 175px;
+    background: #000000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.3;
+    display: none;
+    cursor: move;
+}
+
+#img-left #big {
+    width: 400px;
+    height: 400px;
+    border: 1px solid #000;
+    overflow: hidden;
+    position: absolute;
+    top: 400px;
+    left: 0;
+    display: none;
+    z-index: 10;
+}
+
+#bigImg {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.mian-right {
+    width: 600px;
+    position: relative;
+    float: left;
+    left: 200px;
+}
+
+.mian-right {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 400;
+    color: #212121;
+}
+
+.sale-desc {
+    color: #b0b0b0;
+    padding-top: 8px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.company-info {
+    color: skyblue;
+    font-size: 16px;
+    margin-top: 14px;
+}
+
+.price-info {
+    font-size: 18px;
+    line-height: 1;
+    color: skyblue;
+    padding: 12px 0 10px;
+}
+
+.line[data-v-101] {
+    margin-top: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.buy-option {
+    margin: 20px 0;
+}
+
+.buy-box-child {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.buy-box-child .title[data-v-105] {
+    font-size: 18px;
+}
+
+.buy-option li[data-v-110] {
+    margin-right: 12px;
+    margin-top: 10px;
+    line-height: 42px;
+    height: 42px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    width: 286px;
+    text-align: center;
+    float: left;
+}
+
+.buy-option li a {
+    display: block;
+    font-size: 16px;
+}
+
+.buy-option li.active a {
+    color: skyblue;
+}
+
+.buy-option li.active[data-v-110] {
+    z-index: 3;
+    border-color: skyblue;
+}
+
+.buy-option li:hover a {
+    color: skyblue;
+}
+
+.buy-option li:hover {
+    border-color: skyblue;
+}
+
+.selected-list {
+    background: #f9f9f9;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.selected-list li {
+    line-height: 30px;
+    color: #616161;
+    font-size: 16px;
+}
+
+.selected-list li span[data-v-121] {
+    float: right;
+}
+
+.selected-list li i[data-y] {
+    float: right;
+}
+
+.selected-list .total-price {
+    color: red;
+    font-size: 24px;
+    padding-top: 20px;
+}
+
+.btn-box {
+    margin: 10px 0 20px 0;
+}
+
+.btn-box .sale-btn {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn-box .sale-btn .btn-primar {
+    display: block;
+    width: 284px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 16px;
+    background-color: #ff6700;
+    border: 1px solid #ff6700;
+    cursor: pointer;
+    text-align: center;
+    float: left;
+}
+
+.btn-box .sale-btn .btn-orders {
+    display: block;
+    width: 284px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 16px;
+    background-color: #f72222;
+    border: 1px solid#f72222;
+    cursor: pointer;
+    text-align: center;
+    float: right;
+}
+
+
+/* 弹出框 */
+
+.popover {
+    width: 500px;
+    height: 250px;
+    position: fixed;
+    top: 45%;
+    left: 40%;
+    right: 50%;
+    bottom: 50%;
+    background-color: #fff;
+    display: none;
+}
+
+.popover p {
+    color: #000000;
+}
+
+.popover .settlement {
+    display: block;
+    height: 50px;
+    background-color: #f72222;
+    color: #f9f9f9;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 100px;
+}
+
+.popover .del-x {
+    position: absolute;
+    top: 3px;
+    right: 10px;
+}
+
+.popover .del-x:hover {
+    color: #f72222;
+}

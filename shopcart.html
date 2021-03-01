@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scrollbar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/shopcart.css">
+    <link rel="stylesheet" href="../mz/font/iconfont.css">
+    <style>
+        [v-cloak] {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="car-header">
+        <div class="car-container">
+            <div class="car-logo">
+                <a href="#"><img src="../mz/images/logo.png" alt=""></a>
+            </div>
+            <ul class="car-ul1">
+                <li class="car-li1 li1">购物车</li>
+                <li class="car-li1">确认订单</li>
+                <li class="car-li1">在线支付</li>
+                <li class="car-li1">完成</li>
+            </ul>
+            <ul class="car-ul2">
+                <li>我的订单</li>
+                <li>用户68136...的商城</li>
+            </ul>
+        </div>
+    </div>
+    <main id="shopcart" v-cloak>
+        <div class="shopcart-body" v-if='isShow'>
+            <section class="cart-main">
+                <header class="head">
+                    <nav class="cart-nav flex-vc">
+                        <div class="check-all row-5">
+                            <div class="check-wrapper">
+                                <a href="javascript:;" class="check-ctrl" :class={checked:isSelectedAll} @click='checkAll'> <i class="icon-check"> <span></span> </i> <span class="name-check">全选</span> </a>
+                            </div>
+                        </div>
+                        <div class="singal-price row-2"> 单价（元） </div>
+                        <div class="number row-2"> 数量 </div>
+                        <div class="small-total row-2"> 小计（元） </div>
+                        <div class="edit row-1" @click='toggleEdit'> <span v-text='isEdit ? "编辑" : "完成"'></span> </div>
+                    </nav>
+                </header>
+                <section class="body">
+                    <div class="area" v-for="(kind , i) of goodsInfo" :key="kind.key">
+                        <div class="area-category">
+                            <div class="check-wrapper">
+                                <a href="javascript:;" class="check-ctrl" :class={checked:kind.isSelected} @click='checkCategory(kind)'> <i class="icon-check"> <span></span> </i> <span class="name-check">{{kind.category}}</span> </a>
+                            </div>
+                        </div>
+                        <ul class="area-list">
+                            <li class="item flex-wrap" v-for="(item , index) of kind.goods" :key="item.name">
+                                <div class="option flex-vc row-5">
+                                    <div class="check-wrapper">
+                                        <a href="javascript:;" class="check-ctrl" :class={checked:item.isSelected} @click='checkSingal(kind ,item)'> <i class="icon-check"> <span></span> </i> </a>
+                                    </div>
+                                    <div class="img">
+                                        <a href="javascript:;"> <img :src=item.imgUrl alt=""> </a>
+                                    </div>
+                                    <div class="good-info">
+                                        <a href="javascript:;">
+                                            <h5 class="good-name">{{item.name}}</h5>
+                                            <p class="good-desc">{{item.tips}}</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="singal-price row-2 flex-hvc"> {{item.price | polish }} </div>
+                                <div class="number row-2 flex-hvc">
+                                    <div class="flex-wrap input-box">
+                                        <button class="minus" :class="{'forbid':item.isBanMinus}" @click="minus(item)">-</button>
+                                        <input class="num-input" type="text" :value=item.selectNum @keyup="inputVerify(item,$event)">
+                                        <button class="plus" :class="{'forbid':item.isBanPlus}" @click="plus(item)">+</button>
+                                        <em class="upper-limit">限购<span>{{item.upperLimit}}</span>件</em> </div>
+                                </div>
+                                <div class="small-total row-2 flex-hvc"> {{item.price * item.selectNum | polish()}} </div>
+                                <div class="edit row-1 flex-hvc"> <i class="edit-icon" v-show="isEdit">--</i> <i class="close-btn" v-show="!isEdit" @click="alertDelConfirm(kind,index)"> <span class="shift-left"></span> <span class="shift-right"></span> </i> </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+            <footer class="cart-foot-wrap">
+                <div class="foot flex-vc">
+                    <div class="foot-left flex-vc">
+                        <div class="check-wrapper">
+                            <a href="javascript:;" class="check-ctrl" :class={checked:isSelectedAll} @click='checkAll'> <i class="icon-check"> <span></span> </i> <span class="name-check">全选</span> </a>
+                        </div>
+                        <div class="desc"> <span class="del-selected" @click="alertDelConfirm">删除选中商品</span> <em class="num-desc"> 共有 <span class="sum"> {{sum}} </span> 件商品，已选择 <span class="sumed"> {{sumed}} </span> 件 </em> </div>
+                    </div>
+                    <div class="foot-right flex-vc">
+                        <div class="total-price"> 合计： <span class="totaled"> {{totaled | polish}} </span> </div>
+                        <a href="javascript:;" class="order flex-hvc" :class='{"none-order":isNoOrder}'> 去结算 </a> </div>
+                </div>
+            </footer>
+            <del-confirm ref="delConfirm" @del-goods="deleteOk"></del-confirm>
+        </div>
+        <div class="shopcart-null flex-hvc" v-else> <i class="shopcart-icon"></i>
+            <div class="tips">
+                <h3 class="tips-substitle"> 购物车内还没有商品，赶紧去选购吧~~ </h3>
+                <a href="./index.html" class="back-home flex-hvc"> 返回商城首页 </a> </div>
+        </div>
+    </main>
+    <template id="del-confirm">
+      <div>
+    <aside class="mask-layer" :class='{"show":isAlert}'>
+          <section class="confirm-box">
+        <h3 class="confirm-title flex-hvc"> <span>{{confirmInfo.title}}</span> <i class="close-btn" @click="closeDelConfirm"> <span class="shift-left"></span> <span class="shift-right"></span> </i> </h3>
+        <p class="confirm-con flex-hvc"> {{confirmInfo.content}} </p>
+        <div class="confirm-ctrl flex-hc"> <a href="javascript:;" class="delete" :class='{"show":confirmInfo.del.isShow}'
+                            @click="delSure">{{confirmInfo.del.delCon}}</a> <a href="javascript:;" class="cancel" @click='closeDelConfirm'>{{confirmInfo.cancelCon}}</a> </div>
+      </section>
+        </aside>
+  </div>
+    </template>
+    <div id="meizu_footer" class="meizu_footer">
+        <div class="meizu_footer_link">
+            <div class="meizu_footer_wrap">
+                <div class="footer_tbox">
+                    <ul>
+                        <li><a href="#"><span class="iconfont">&#xe600;</span><p>满80免运费</p></a></li>
+                        <li><a href="#"><span class="iconfont">&#xe995;</span><p>100+城市次日送达</p></a></li>
+                        <li><a href="#"><span class="iconfont">&#xe64c;</span><p>7天无理由退货</p></a></li>
+                        <li><a href="#"><span class="iconfont">&#xe687;</span><p>15天换货保障</p></a></li>
+                        <li><a href="#"><span class="iconfont">&#xe602;</span><p>1年免费保修</p></a></li>
+                        <li><a href="#"><span class="iconfont">&#xe64f;</span><p>上门快修</p></a></li>
+                    </ul>
+                    <div class="tbox_right">
+                        <p>400-788-333</p>
+                        <span><a href="#">在线客服</a></span>
+
+                    </div>
+                </div>
+                <hr class="footer_hr">
+                <div class="footer_co">
+                    <div class="footer_bbox">
+                        <ul>
+                            <li><a href="#">了解魅族</a></li>
+                            <li><a href="#">加入我们</a></li>
+                            <li><a href="#">联系我们</a></li>
+                            <li><a href="#">Flyme</a></li>
+                            <li><a href="#">魅族社区</a></li>
+                            <li><a href="#">天猫旗舰店</a></li>
+                            <li><a href="#">问题反馈</a></li>
+                            <li><a href="#">线上销售授权名单公示</a></li>
+                            <li><a href="#">出版物经营许可证</a></li>
+                            <li><a href="#">简体中文</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_bottom">
+                        <p>©2020 Meizu Telecom Equipment Co., Ltd. All rights reserved. 粤ICP备13003602号合字B2-20170010 营业执照法律声明粤公网安备 44049102496009 号
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://www.jq22.com/jquery/vue.min.js"></script>
+    <script src="js/shopcart.js"></script>
+</body>
+
+</html>
